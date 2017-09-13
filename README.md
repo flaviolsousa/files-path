@@ -266,4 +266,4 @@ console.log(JSON.stringify(exec2, null, 2));
 - filter by function
 
 ## License
-MIT © Flavio L Sousa (flasoft@gmail.com)
+Apache-2.0 © Flavio L Sousa (flasoft@gmail.com)
