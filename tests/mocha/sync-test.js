@@ -9,12 +9,12 @@ function requireLib() {
   return require('../../lib/files-path');
 }
 
-describe('main', function () {
+describe('Sync-Tests', function () {
   // only skip
   /*
   it.only('TMP TEST', function () {
     var fp = requireLib(); //require('files-path');
-    
+
   });
   */
 
@@ -25,14 +25,14 @@ describe('main', function () {
     };
     var files = requireLib().sync(options);
     // console.log('files: ', files);
-    assert(files.length == 1, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 1, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     var file = files[0];
 
     assert(file.name = 'file-dir-a.txt', 'Found incorrect file');
     assert(file.path = path.normalize(options.path), 'Found incorrect path');
-    assert(file.fullPath == path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
-    assert(file.fullName == path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
+    assert(file.fullPath === path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
+    assert(file.fullName === path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
 
     done();
   });
@@ -45,19 +45,19 @@ describe('main', function () {
     };
     var files = requireLib().sync(options);
     //console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     var fileBasePath = files[0];
     assert(fileBasePath.name = 'basePath.txt', 'Found incorrect file');
     assert(fileBasePath.path = path.normalize(options.path), 'Found incorrect path');
-    assert(fileBasePath.fullPath == path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
-    assert(fileBasePath.fullName == path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
+    assert(fileBasePath.fullPath === path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
+    assert(fileBasePath.fullName === path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
 
     var file = files[1];
     assert(file.name = 'file-dir-a.txt', 'Found incorrect file');
     assert(file.path = path.normalize(options.path), 'Found incorrect path');
-    assert(file.fullPath == path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
-    assert(file.fullName == path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
+    assert(file.fullPath === path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
+    assert(file.fullName === path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
 
     done();
   });
@@ -72,19 +72,19 @@ describe('main', function () {
     };
     var files = fp.sync(options);
     //console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     var fileBasePath = files[0];
     assert(fileBasePath.name = 'basePath.txt', 'Found incorrect file');
     assert(fileBasePath.path = path.normalize(options.path), 'Found incorrect path');
-    assert(fileBasePath.fullPath == path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
-    assert(fileBasePath.fullName == path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
+    assert(fileBasePath.fullPath === path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
+    assert(fileBasePath.fullName === path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
 
     var file = files[1];
     assert(file.name = 'file-dir-a.txt', 'Found incorrect file');
     assert(file.path = path.normalize(options.path), 'Found incorrect path');
-    assert(file.fullPath == path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
-    assert(file.fullName == path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
+    assert(file.fullPath === path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
+    assert(file.fullName === path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
 
     done();
   });
@@ -99,19 +99,19 @@ describe('main', function () {
     };
     var files = fp.sync(options);
     //console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     var fileBasePath = files[0];
     assert(fileBasePath.name = 'basePath.txt', 'Found incorrect file');
     assert(fileBasePath.path = path.normalize(options.path), 'Found incorrect path');
-    assert(fileBasePath.fullPath == path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
-    assert(fileBasePath.fullName == path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
+    assert(fileBasePath.fullPath === path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
+    assert(fileBasePath.fullName === path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
 
     var file = files[1];
     assert(file.name = 'file-dir-a.txt', 'Found incorrect file');
     assert(file.path = path.normalize(options.path), 'Found incorrect path');
-    assert(file.fullPath == path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
-    assert(file.fullName == path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
+    assert(file.fullPath === path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
+    assert(file.fullName === path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
 
 
     options = {
@@ -119,19 +119,19 @@ describe('main', function () {
     };
     files = fp.sync(options);
     //console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     fileBasePath = files[0];
     assert(fileBasePath.name = 'basePath.txt', 'Found incorrect file');
     assert(fileBasePath.path = path.normalize(options.path), 'Found incorrect path');
-    assert(fileBasePath.fullPath == path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
-    assert(fileBasePath.fullName == path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
+    assert(fileBasePath.fullPath === path.normalize('tests/documents'), 'Found incorrect fullPath\n' + fileBasePath.fullPath + '\n' + path.normalize('tests/documents'));
+    assert(fileBasePath.fullName === path.normalize(fileBasePath.fullPath + '/' + fileBasePath.name), 'Found incorrect fullName');
 
     file = files[1];
     assert(file.name = 'file-dir-b.txt', 'Found incorrect file');
     assert(file.path = path.normalize(options.path), 'Found incorrect path');
-    assert(file.fullPath == path.normalize('tests/documents/dir-b'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
-    assert(file.fullName == path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
+    assert(file.fullPath === path.normalize('tests/documents/dir-b'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
+    assert(file.fullName === path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
 
 
     done();
@@ -148,14 +148,14 @@ describe('main', function () {
     };
     var files = fp.sync(options);
     //console.log('files: ', files);
-    assert(files.length == 1, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 1, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     var file = files[0];
 
     assert(file.name = 'file-dir-a.txt', 'Found incorrect file');
     assert(file.path = path.normalize(options.path), 'Found incorrect path');
-    assert(file.fullPath == path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
-    assert(file.fullName == path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
+    assert(file.fullPath === path.normalize('tests/documents/dir-a'), 'Found incorrect fullPath\n' + file.fullPath + '\n' + path.normalize('tests/documents/dir-a'));
+    assert(file.fullName === path.normalize(file.fullPath + '/' + file.name), 'Found incorrect fullName');
 
     done();
   });
@@ -169,7 +169,7 @@ describe('main', function () {
     };
     var files = fp.sync(options);
     // console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
     assert(files[0].name = 'file-dir-b.txt', 'Found incorrect file');
     assert(files[1].name = 'file-dir-m.txt', 'Found incorrect file');
 
@@ -184,7 +184,7 @@ describe('main', function () {
     };
     var files = fp.sync(options);
     // console.log('files: ', files);
-    assert(files.length == 3, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 3, 'Incorrect number of files founded: ' + JSON.stringify(files));
     assert(files[0].name = 'file-dir-b.txt', 'Found incorrect file');
     assert(files[1].name = 'file-dir-m.js', 'Found incorrect file');
     assert(files[2].name = 'file-dir-m.txt', 'Found incorrect file');
@@ -200,8 +200,8 @@ describe('main', function () {
       basePath: 'tests/documents'
     };
     var files = fp.sync(options);
-    //console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
     assert(files[0].name = 'file-dir-m.js', 'Found incorrect file');
     assert(files[1].name = 'file-dir-m.txt', 'Found incorrect file');
 
@@ -231,7 +231,7 @@ describe('main', function () {
     };
     var files = fp.sync(options);
     //console.log('files: ', files);
-    assert(files.length == 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
     assert(validator === 'file-dir-m.js, file-dir-m.txt', 'Found execution of callback: ' + validator);
 
     done();
@@ -277,14 +277,14 @@ describe('main', function () {
     var fp = requireLib()(options);
     var files = fp.sync();
     // console.log('files: ', files);
-    assert(files.length == 1, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 1, 'Incorrect number of files founded: ' + JSON.stringify(files));
     assert(files[0].name = 'file-dir-m.js', 'Found incorrect file');
 
     options.maxDeep = 2;
     fp = requireLib()(options);
     files = fp.sync();
     // console.log('files: ', files);
-    assert(files.length == 0, 'Incorrect number of files founded: ' + JSON.stringify(files));
+    assert(files.length === 0, 'Incorrect number of files founded: ' + JSON.stringify(files));
 
     done();
   });

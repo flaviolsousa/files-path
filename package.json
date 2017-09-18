@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests/m-index.js",
+    "test": "mocha --slow 0 tests/m-index.js",
     "test-cov": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha ./tests/m-index.js",
     "test-cov-win": "./node_modules/.bin/istanbul.cmd cover ./node_modules/mocha/bin/_mocha ./tests/m-index.js"
   },
