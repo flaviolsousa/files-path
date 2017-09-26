@@ -133,7 +133,7 @@ See: [Options](#options)
     <br/>
     Maximum number of folders to be scanned
     </dd>
-  
+
 </dl>
 
 [back to top](#table-of-contents)
@@ -144,19 +144,19 @@ See: [Options](#options)
 
 ### With this folder structure:
 ```
-.
-└┄ tests
-   └┄ documents
-      ├┄ dir-a
-      │  └┄ file-dir-a.txt
-      ├┄ dir-b
-      │  ├┄ dir-x
-      │  │  ├┄ dir-a
-      │  │  │  └┄ file-dir-a.txt
-      │  │  ├┄ 1file-dir-x.js
-      │  │  └┄ 2file-dir-x.txt
-      │  └┄ file-dir-b.txt
-      └┄ basePath.txt
+♦
+└┄ ▼ tests
+   └┄ ▼ documents
+      ├┄ ▼ dir-a
+      │  └┄ • file-dir-a.txt
+      ├┄ ▼ dir-b
+      │  ├┄ ▼ dir-x
+      │  │  ├┄ ▼ dir-a
+      │  │  │  └┄ • file-dir-a.txt
+      │  │  ├┄ • 1file-dir-x.js
+      │  │  └┄ • 2file-dir-x.txt
+      │  └┄ • file-dir-b.txt
+      └┄ • basePath.txt
 ```
 ### Basic
 ```js

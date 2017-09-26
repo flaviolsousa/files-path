@@ -1,7 +1,10 @@
 'use strict';
 
+var log = require('../../lib/log');
+
 var assert = require('assert');
 var path = require('path');
+
 
 // var merge = require('merge');
 
@@ -173,17 +176,17 @@ describe('Async-Callback-Tests', function () {
     });
   });
 
-  it.only('Filter String *.txt', function (done) {
+  it('Filter String *.txt', function (done) {
     var fp = requireLib();
     var options = {
       path: 'dir-b\\dir-y\\dir-m',
       filters: ["*.txt"],
-      basePath: 'tests/documents'
-      ,verbose:true
+      basePath: 'tests/documents',
+      //verbose: true,
     };
     fp.async(options, function (err, files) {
       assert.ok(!err, 'An error occurr: ', JSON.stringify(err));
-      // console.log('files: ', files);
+      log(options, 'files: ' + files);
       assert(files.length === 2, 'Incorrect number of files founded: ' + JSON.stringify(files));
       assert(files[0].name = 'file-dir-b.txt', 'Found incorrect file');
       assert(files[1].name = 'file-dir-m.txt', 'Found incorrect file');
