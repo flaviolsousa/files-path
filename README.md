@@ -1,6 +1,7 @@
 # files-path
 JS Library to List Files in a Folder List
 
+[![NPM version](https://img.shields.io/npm/v/files-path.svg)](https://www.npmjs.com/package/files-path)
 [![Build Status](https://travis-ci.org/flaviolsousa/files-path.svg?branch=master)](https://travis-ci.org/flaviolsousa/files-path)
 [![codecov](https://codecov.io/gh/flaviolsousa/files-path/branch/master/graph/badge.svg)](https://codecov.io/gh/flaviolsousa/files-path)
 [![dependencies Status](https://david-dm.org/flaviolsousa/files-path/status.svg)](https://david-dm.org/flaviolsousa/files-path)
@@ -54,9 +55,25 @@ See: [Options](#options)
   <dd>
     <code>var files = require('files-path').sync(options);</code>
   </dd>
+  <dt>Get files list asynchronous with callback</dt>
+  <dd>
+    <code>require('files-path').async(options, callback(err, files));</code>
+  </dd>
+  <dt>Get files list asynchronous with Promise</dt>
+  <dd>
+    <code>require('files-path').async(options).then(files).catch(err);</code>
+  </dd>
   <dt>Require lib with default options and get files list synchronous</dt>
   <dd>
     <code>var files = require('files-path')(defaultOptions).sync(options);</code>
+  </dd>
+  <dt>Require lib with default options and get files list asynchronous with callback</dt>
+  <dd>
+    <code>require('files-path')(defaultOptions).async(options, callback(err, files));</code>
+  </dd>
+  <dt>Require lib with default options and get files list asynchronous with Promise</dt>
+  <dd>
+    <code>require('files-path')(defaultOptions).async(options).then(files).catch(err);</code>
   </dd>
 </dl>
 
@@ -257,13 +274,72 @@ console.log(JSON.stringify(exec2, null, 2));
 ]
 ```
 
+### Basic Asyncronous with Callback
+```js
+var fp = require('files-path');
+var files = fp.async({
+  basePath: 'tests/documents',
+  path: 'dir-b/dir-x',
+  filters: '*.txt'
+}, function(err, files) {
+  if (err) console.log(JSON.stringify(err, null, 2));
+  console.log(JSON.stringify(files, null, 2));
+});
+```
+```json
+[
+  {
+    "name": "file-dir-b.txt",
+    "path": "dir-b",
+    "fullName": "tests\\documents\\dir-b\\file-dir-b.txt",
+    "fullPath": "tests\\documents\\dir-b"
+  },
+  {
+    "name": "2file-dir-x.txt",
+    "path": "dir-b\\dir-x",
+    "fullName": "tests\\documents\\dir-b\\dir-x\\2file-dir-x.txt",
+    "fullPath": "tests\\documents\\dir-b\\dir-x"
+  }
+]
+```
+
+### Basic Asyncronous with Promise
+```js
+var fp = require('files-path');
+var files = fp.async({
+  basePath: 'tests/documents',
+  path: 'dir-b/dir-x',
+  filters: '*.txt'
+}).then(function(files) {
+  console.log(JSON.stringify(files, null, 2));
+}).catch(function(err) {
+  console.log(JSON.stringify(err, null, 2))
+});
+```
+```json
+[
+  {
+    "name": "file-dir-b.txt",
+    "path": "dir-b",
+    "fullName": "tests\\documents\\dir-b\\file-dir-b.txt",
+    "fullPath": "tests\\documents\\dir-b"
+  },
+  {
+    "name": "2file-dir-x.txt",
+    "path": "dir-b\\dir-x",
+    "fullName": "tests\\documents\\dir-b\\dir-x\\2file-dir-x.txt",
+    "fullPath": "tests\\documents\\dir-b\\dir-x"
+  }
+]
+```
+
 [back to top](#table-of-contents)
 
 ---
 
 ## Todo list
-- async
 - filter by function
+- make log.js to become an external npm package
 
 ## License
 Apache-2.0 © Flavio L Sousa (flasoft@gmail.com)
