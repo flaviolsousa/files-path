@@ -1,6 +1,6 @@
 'use strict';
 
-var log = require('../../lib/log');
+var log = require('log-verbose');
 
 var assert = require('assert');
 var path = require('path');

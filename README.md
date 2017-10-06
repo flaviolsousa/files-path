@@ -144,6 +144,19 @@ See: [Options](#options)
     Show logs on console
   </dd>
 
+  <dt>verboseFilters</dt>
+  <dd>
+    <em>Default: <b>false</b></em>
+    <br/>
+    <em>Depend of <b>verbose:true</b></em>
+    <br/>
+    Filter logs.<br/>
+    <code>Samples:<br/>
+    verboseFilters:['file-name.js']<br/>
+    verboseFilters:[/.*test\d+.*/g]<br/>
+    verboseFilters:['contained text', /.*\d{10}.*/g]</code>
+  </dd>
+
   <dt>maxDeep</dt>
   <dd>
     <em>Default: <b>50</b></em>

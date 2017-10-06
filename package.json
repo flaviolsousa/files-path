@@ -1,6 +1,6 @@
 {
   "name": "files-path",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JS Library to List Files in a Path",
   "main": "./lib/files-path.js",
   "directories": {
@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "escape-string-regexp": "^1.0.5",
+    "log-verbose": "^1.0.0",
     "merge": "^1.2.0"
   }
 }

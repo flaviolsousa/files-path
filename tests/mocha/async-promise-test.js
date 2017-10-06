@@ -1,6 +1,6 @@
 'use strict';
 
-var log = require('../../lib/log');
+var log = require('log-verbose');
 
 var assert = require('assert');
 var path = require('path');
@@ -44,12 +44,14 @@ describe('Async-Promise-Tests', function () {
     });
   });
 
-  it('Test maxDeep security infinity loop', function (done) {
+  it.only('Test maxDeep security infinity loop', function (done) {
     var options = {
       basePath: 'tests/documents',
       path: 'dir-b/dir-y/dir-m',
       filters: "file-dir-m.js",
-      maxDeep: 3
+      maxDeep: 3,
+      //verbose: true,
+      //verboseFilters: ['file:', 'nextFolder:'],
     };
 
     var fp = requireLib()(options);
