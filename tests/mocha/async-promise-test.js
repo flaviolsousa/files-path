@@ -44,7 +44,7 @@ describe('Async-Promise-Tests', function () {
     });
   });
 
-  it.only('Test maxDeep security infinity loop', function (done) {
+  it('Test maxDeep security infinity loop', function (done) {
     var options = {
       basePath: 'tests/documents',
       path: 'dir-b/dir-y/dir-m',
