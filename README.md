@@ -2,6 +2,7 @@
 JS Library to List Files in a Folder List
 
 [![NPM version](https://img.shields.io/npm/v/files-path.svg)](https://www.npmjs.com/package/files-path)
+[![npm](https://img.shields.io/npm/dt/files-path.svg)](https://github.com/flaviolsousa/files-path)
 [![Build Status](https://travis-ci.org/flaviolsousa/files-path.svg?branch=master)](https://travis-ci.org/flaviolsousa/files-path)
 [![codecov](https://codecov.io/gh/flaviolsousa/files-path/branch/master/graph/badge.svg)](https://codecov.io/gh/flaviolsousa/files-path)
 [![dependencies Status](https://david-dm.org/flaviolsousa/files-path/status.svg)](https://david-dm.org/flaviolsousa/files-path)
